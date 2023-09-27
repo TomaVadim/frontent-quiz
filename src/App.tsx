@@ -1,7 +1,12 @@
-import { FC } from 'react';
+import { Provider } from "react-redux";
+import { PropsWithChildren } from "react";
 
-import { Layout } from './pages/layout';
+import store from "./stores/store";
 
-export const App: FC = () => {
-  return <Layout />;
+export const App = ({ children }: PropsWithChildren): JSX.Element => {
+  return (
+    <Provider store={store}>
+      {children}
+    </Provider>
+  );
 };

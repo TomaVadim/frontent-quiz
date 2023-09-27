@@ -1,13 +1,9 @@
-import { FC } from 'react';
-import { Header } from '../../components/header/header';
+import { FC } from "react";
 
 export const Home: FC = () => {
   return (
-    <>
-      <Header />
-      <div>
-        <p>Home page</p>
-      </div>
-    </>
+    <div>
+      <p>Home page</p>
+    </div>
   );
 };
