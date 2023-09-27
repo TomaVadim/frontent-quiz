@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 
-import { AppNavigation } from "./routes/app-navigation";
+import { AppNavigation } from "@/routes/app-navigation";
 
 import "./assets/index.css";
 
