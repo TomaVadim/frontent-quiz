@@ -1,0 +1,41 @@
+.navbar {
+  width: 100%;
+  min-height: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #b0b4ce;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+  list-style: none;
+}
+
+.item {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.item:hover {
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+
+.log {
+  background-color: transparent;
+  color: #fff;
+}
+
+.sign {
+  background-color: transparent;
+  color: #156137;
+}

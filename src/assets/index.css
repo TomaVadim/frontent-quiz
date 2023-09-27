@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
