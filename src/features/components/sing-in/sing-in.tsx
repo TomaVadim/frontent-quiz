@@ -1,12 +1,12 @@
-import { FC, useRef, FormEvent } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import style from './sing-in.module.css';
-import { AppDispatch, RootState } from '../../../stores/store';
-import { unshow } from '../../../redux/modal-reducer';
+import { FC, useRef, FormEvent } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import style from "./sing-in.module.css";
+import { AppDispatch, RootState } from "../../../stores/store";
+import { unshow } from "../../../stores/redux/modal-reducer";
 
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition } from "react-transition-group";
 
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 
 export const SingIn: FC = () => {
   const modalRef = useRef(null);
@@ -44,19 +44,15 @@ export const SingIn: FC = () => {
               </button>
               <h3 className={style.title}>Sing in:</h3>
               <form onSubmit={handleSubmit} className={style.form}>
-                <label className={style.label} htmlFor='login'>
+                <label className={style.label} htmlFor="login">
                   Login:
-                  <input className={style.input} id='login' type='text' />
+                  <input className={style.input} id="login" type="text" />
                 </label>
-                <label className={style.label} htmlFor='password'>
+                <label className={style.label} htmlFor="password">
                   Password:
-                  <input
-                    className={style.input}
-                    id='password'
-                    type='password'
-                  />
+                  <input className={style.input} id="password" type="password" />
                 </label>
-                <button className={style.button} type='submit'>
+                <button className={style.button} type="submit">
                   Sing in
                 </button>
               </form>
