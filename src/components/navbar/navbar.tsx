@@ -1,12 +1,12 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import style from './navbar.module.css';
-import { AppDispatch } from '../../stores/store';
-import { show } from '../../redux/modal-actions';
+import style from "./navbar.module.css";
+import { AppDispatch } from "../../stores/redux/store";
+import { show } from "../../stores/redux/modal/actions/modal-actions";
 
 export const Navbar: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -19,7 +19,7 @@ export const Navbar: FC = () => {
     <nav className={style.navbar}>
       <ul className={style.list}>
         <li className={style.item}>
-          <Link to='/'>Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li className={style.item}>Get started</li>
         <li className={style.item}>Features</li>

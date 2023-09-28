@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from '../../redux/counter-reducer';
-import { RootState } from '../../stores/store';
+import { FC } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "../../stores/redux/counter-reducer";
+import { RootState } from "../../stores/redux/store";
 
 export const Counter: FC = () => {
   const count = useSelector((state: RootState) => state.counter.value);
