@@ -2,7 +2,7 @@ import { FC, useRef, FormEvent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import style from "./sing-in.module.css";
 import { AppDispatch, RootState } from "../../../stores/store";
-import { unshow } from "../../../stores/redux/modal-reducer";
+import { unshow } from "../../../stores/redux/modal/reducers/modal-reducer";
 
 import { CSSTransition } from "react-transition-group";
 
