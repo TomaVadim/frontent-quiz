@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import style from "./navbar.module.css";
-import { AppDispatch } from "../../stores/store";
+import { AppDispatch } from "../../stores/redux/store";
 import { show } from "../../stores/redux/modal/actions/modal-actions";
 
 export const Navbar: FC = () => {
