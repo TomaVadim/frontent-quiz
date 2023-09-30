@@ -1,20 +1,18 @@
 import { FC } from "react";
 
-import style from "./fallback.module.css";
-
-type Props = {
+interface Props {
   error: Error;
-  resetErrorBoundary: () => void;
+  onErrorReset: () => void;
 };
 
-export const Fallback: FC<Props> = ({ error, resetErrorBoundary }) => {
+export const Fallback: FC<Props> = ({ error, onErrorReset }) => {
   return (
-    <div className={style.container} role="alert">
+    <section role="alert">
       <h2>Something went wrong:</h2>
-      <pre className={style.error}>{error.message}</pre>
-      <button className={style.button} onClick={resetErrorBoundary}>
-        Try again
-      </button>
-    </div>
+
+      <pre>{error.message}</pre>
+
+      <button onClick={onErrorReset}></button>
+    </section>
   );
 };
