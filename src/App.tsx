@@ -1,6 +1,5 @@
 import { Provider } from "react-redux";
 import { PropsWithChildren } from "react";
-
 import { ErrorBoundary } from "react-error-boundary";
 
 import { ErrorFallback } from "@/components/error-fallback/error-fallback";
