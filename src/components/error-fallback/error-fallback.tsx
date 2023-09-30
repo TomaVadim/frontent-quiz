@@ -2,10 +2,10 @@ import { FC } from "react";
 
 interface Props {
   error: Error;
-  onErrorReset: () => void;
+  onErrorReset?: () => void;
 };
 
-export const Fallback: FC<Props> = ({ error, onErrorReset }) => {
+export const ErrorFallback: FC<Props> = ({ error, onErrorReset }) => {
   return (
     <section role="alert">
       <h2>Something went wrong:</h2>
