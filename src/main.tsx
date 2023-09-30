@@ -4,7 +4,7 @@ import { RouterProvider } from "react-router-dom";
 
 import { AppNavigation } from "@/routes/app-navigation";
 
-import "./assets/index.css";
+import "@/styles/index.css";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
