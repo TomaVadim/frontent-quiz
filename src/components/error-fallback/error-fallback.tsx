@@ -1,18 +1,22 @@
-import { FC } from "react";
+import { PropsWithChildren } from "react";
 
 interface Props {
   error: Error;
-  onErrorReset?: () => void;
-};
+  title: string;
+}
 
-export const ErrorFallback: FC<Props> = ({ error, onErrorReset }) => {
+export const ErrorFallback = ({
+  error,
+  title,
+  children,
+}: PropsWithChildren<Props>): JSX.Element => {
   return (
     <section role="alert">
-      <h2>Something went wrong:</h2>
+      <h2>{title}</h2>
 
       <pre>{error.message}</pre>
 
-      <button onClick={onErrorReset}></button>
+      {children}
     </section>
   );
 };
