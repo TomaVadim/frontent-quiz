@@ -1,4 +1,4 @@
-class TokenServise {
+class TokenService {
   private accessTokenKey: string;
   private refreshTokenKey: string;
 
@@ -29,4 +29,4 @@ class TokenServise {
   }
 }
 
-export default new TokenServise();
+export default new TokenService();

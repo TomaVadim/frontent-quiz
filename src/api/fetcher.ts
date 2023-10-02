@@ -1,6 +1,7 @@
-import TokenService from "@/shared/servises/token-servise";
 import axios from "axios";
 import { AxiosResponse, AxiosError, InternalAxiosRequestConfig } from "axios";
+
+import TokenService from "@/shared/services/token-service";
 
 const BASE_URL: string = "https:/example.com";
 
