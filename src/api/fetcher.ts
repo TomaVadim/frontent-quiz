@@ -1,9 +1,13 @@
 import axios from "axios";
 import { AxiosResponse, AxiosError, InternalAxiosRequestConfig } from "axios";
 
-import TokenService from "@/shared/services/token-service";
+import { TokenService } from "@/shared/services/token-service";
+import { authRequest } from "@/api/requests/auth.requests";
 
-const BASE_URL: string = "https:/example.com";
+const { getAccessToken, getRefreshToken, setAccessToken, removeTokens } =
+  new TokenService();
+
+export const BASE_URL: string = "https:/example.com";
 
 const fetcher = axios.create({
   baseURL: BASE_URL,
@@ -11,7 +15,8 @@ const fetcher = axios.create({
 
 fetcher.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    const accessToken = TokenService.getAccessToken();
+    const accessToken = getAccessToken();
+
     if (accessToken) {
       config.headers["Authorization"] = `Bearer ${accessToken}`;
     }
@@ -27,28 +32,22 @@ fetcher.interceptors.response.use(
   (response: AxiosResponse) => response,
   async (error) => {
     if (error.response && error.response.status === 401) {
-      const refreshToken = TokenService.getRefreshToken();
+      const refreshToken = getRefreshToken();
 
-      if (refreshToken) {
+      if (refreshToken && typeof refreshToken === "string") {
         try {
-          const refreshedToken = await refreshTokenAPI(refreshToken);
-          TokenService.setAccessToken(refreshedToken);
+          const refreshedToken = await authRequest(refreshToken);
+          setAccessToken(refreshedToken);
           return fetcher(error.config);
         } catch (refreshError) {
-          TokenService.removeTokens();
+          removeTokens();
           console.error("Token refresh failed:", refreshError);
         }
       } else {
-        TokenService.removeTokens();
+        removeTokens();
       }
     }
+
     return Promise.reject(error);
   },
 );
-
-async function refreshTokenAPI(refreshToken: string) {
-  const response = await axios.post(`${BASE_URL}/refresh-token`, {
-    refresh_token: refreshToken,
-  });
-  return response.data.access_token;
-}
