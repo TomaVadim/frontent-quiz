@@ -1,32 +1,30 @@
-class TokenService {
-  private accessTokenKey: string;
-  private refreshTokenKey: string;
+export class TokenService {
+  accessToken: string;
+  refreshToken: string;
 
-  constructor() {
-    this.accessTokenKey = "access_token";
-    this.refreshTokenKey = "refresh_token";
+  constructor(accessToken?: string, refreshToken?: string) {
+    this.accessToken = accessToken || "";
+    this.refreshToken = refreshToken || "";
   }
 
   getAccessToken(): string | null {
-    return localStorage.getItem(this.accessTokenKey);
+    return localStorage.getItem(this.accessToken);
   }
 
   setAccessToken(token: string): void {
-    localStorage.setItem(this.accessTokenKey, token);
+    localStorage.setItem(this.accessToken, token);
   }
 
   getRefreshToken(): string | null {
-    return localStorage.getItem(this.refreshTokenKey);
+    return localStorage.getItem(this.refreshToken);
   }
 
   setRefreshToken(token: string): void {
-    localStorage.setItem(this.refreshTokenKey, token);
+    localStorage.setItem(this.refreshToken, token);
   }
 
   removeTokens(): void {
-    localStorage.removeItem(this.accessTokenKey);
-    localStorage.removeItem(this.refreshTokenKey);
+    localStorage.removeItem(this.accessToken);
+    localStorage.removeItem(this.refreshToken);
   }
 }
-
-export default new TokenService();
