@@ -1,22 +1,19 @@
-import { PaletteOptions } from "@mui/material";
+import { PaletteOptions, alpha } from "@mui/material";
 
 export const palette: PaletteOptions = {
   primary: {
-    main: "#000000",
-    dark: "#383838",
-    light: "#3a3a3a",
-    contrastText: "#ffffff",
-  },
-  secondary: {
-    main: "#aaaaaa",
+    main: "#3a3a3a",
     dark: "#373737",
-    light: "#d9d9d9",
-    contrastText: "#aaaaaaa",
+    light: "#707070",
   },
-  info: {
-    main: "#383838",
-    dark: "#707070",
-    light: "#b6b6b6",
-    contrastText: "#4285f4",
+  secondary: {},
+  common: {
+    black: "#000000",
+    white: "#ffffff",
+  },
+  grey: {
+    50: "#aaaaaa",
+    100: "#808080",
+    A100: alpha("#000000", 0.5),
   },
 };
