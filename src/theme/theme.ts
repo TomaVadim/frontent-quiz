@@ -3,7 +3,7 @@ import { Theme } from "@mui/material";
 
 import { palette } from "@/theme/palette";
 import { typography } from "@/theme/typography";
-import { buttonTheme } from "@/components/ui/button/button";
+import { buttonTheme } from "@/theme/overrides/Button";
 
 export const generateTheme = (): Theme => {
   const theme = createTheme({
