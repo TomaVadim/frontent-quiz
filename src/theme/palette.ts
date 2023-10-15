@@ -6,7 +6,12 @@ export const palette: PaletteOptions = {
     dark: "#373737",
     light: "#707070",
   },
-  secondary: {},
+  // TODO: update secondary colors later
+  secondary: {
+    main: "#ffffff",
+    dark: "#ffffff",
+    light: "#ffffff",
+  },
   common: {
     black: "#000000",
     white: "#ffffff",
