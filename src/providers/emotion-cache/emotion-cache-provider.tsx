@@ -1,11 +1,12 @@
 import { PropsWithChildren } from "react";
 
-import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
+import { CacheProvider } from "@emotion/react";
 
 const cache = createCache({
   key: "mui",
 });
-export const EmotionCacheProvider = ({ children }: PropsWithChildren) => {
+
+export const EmotionCacheProvider = ({ children }: PropsWithChildren): JSX.Element => {
   return <CacheProvider value={cache}>{children}</CacheProvider>;
 };
