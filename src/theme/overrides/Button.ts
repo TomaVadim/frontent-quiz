@@ -3,17 +3,22 @@ import { Components, Theme } from "@mui/material";
 export const Button = (theme: Theme): Components => {
   return {
     MuiButton: {
+      defaultProps: {
+        disableRipple: true,
+      },
       styleOverrides: {
         root: {
-          backgroundColor: "#3a3a3a",
+          backgroundColor: theme.palette.primary.main,
           boxShadow: "4px 6px 15px rgba(0, 0, 0, 0.06)",
-          borderRadius: "6px",
-          width: "100%",
-          maxHeight: "59px",
-          color: "#ffffff",
+          borderRadius: 6,
+          maxHeight: 59,
+          color: theme.palette.primary.light,
           textTransform: "capitalize",
           "&:hover": {
-            backgroundColor: "#707070",
+            backgroundColor: theme.palette.primary.dark,
+          },
+          "&:focus": {
+            backgroundColor: theme.palette.primary.dark,
           },
         },
       },

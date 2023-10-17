@@ -10,6 +10,7 @@ export const generateTheme = (): Theme => {
     palette,
     typography,
   });
+
   theme.components = overrides(theme);
 
   return theme;
