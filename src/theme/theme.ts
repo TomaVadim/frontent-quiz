@@ -3,9 +3,7 @@ import { Theme } from "@mui/material";
 
 import { palette } from "@/theme/palette";
 import { typography } from "@/theme/typography";
-
-import { inputTheme } from "@/components/ui/input/input-theme";
-
+import { inputOverrides } from "@/theme/overrides/input-overrides";
 
 export const generateTheme = (): Theme => {
   const theme = createTheme({
@@ -14,7 +12,7 @@ export const generateTheme = (): Theme => {
     components: {
       MuiInput: {
         styleOverrides: {
-          root: inputTheme,
+          root: inputOverrides,
         },
       },
     },
